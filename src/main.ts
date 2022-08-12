@@ -1,5 +1,18 @@
 import './style.css'
 import lottie from "lottie-web";
+
+const $loader = document.querySelector('.loader')!;
+const $content = document.querySelector('.content')!;
+
+document.addEventListener('load', () => {
+  console.log("me ejecuto");
+
+  setTimeout(() => {
+    $loader.classList.toggle('d-none');
+    $content.classList.toggle('d-none');
+  }, 5000);
+});
+
 const $app = document.querySelector<HTMLDivElement>('#app')!;
 
 let instanceLottie = lottie.loadAnimation({
